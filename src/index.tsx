@@ -115,7 +115,7 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
               selectedEndDate={endDate}
               selectedDayColor={'#def0e8'}
               onDateChange={(v: Moment, type: any) =>
-                handleDate(v.toDate(), type)
+                handleDate(v?.toDate(), type)
               }
               allowRangeSelection
               allowBackwardRangeSelect
