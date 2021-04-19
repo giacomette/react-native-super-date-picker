@@ -19,7 +19,7 @@ import { Div, Icon, Text } from 'react-native-magnus';
 
 const { width } = Dimensions.get('screen');
 
-interface DatePickerProps {
+export interface DatePickerProps {
   startDate?: Date;
   endDate?: Date;
   ref?: any;
