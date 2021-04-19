@@ -11,11 +11,15 @@ npm install react-native-super-date-picker
 ## Usage
 
 ```js
-import SuperDatePicker from "react-native-super-date-picker";
+import SuperDatePicker from 'react-native-super-date-picker';
 
 // ...
 
-const result = await SuperDatePicker.multiply(3, 7);
+<SuperDatePicker
+  endDate={new Date()}
+  startDate={new Date()}
+  onChange={(startDate, endDate) => {}}
+/>;
 ```
 
 ## Contributing

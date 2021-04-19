@@ -1,18 +1,22 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import SuperDatePicker from 'react-native-super-date-picker';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    SuperDatePicker.multiply(3, 7).then(setResult);
-  }, []);
+  const [startDate, setStartDate] = React.useState<Date>();
+  const [endDate, setEndDate] = React.useState<Date>();
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <SuperDatePicker
+        startDate={startDate}
+        endDate={endDate}
+        onChange={(start, end) => {
+          setStartDate(start);
+          setEndDate(end);
+        }}
+      />
     </View>
   );
 }
@@ -22,10 +26,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
