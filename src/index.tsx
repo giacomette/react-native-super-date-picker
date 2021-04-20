@@ -74,10 +74,10 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
 
     const handleOk = useCallback(() => {
       if (typeof onChange === 'function') {
-        onChange(startDate as Date, finishDate);
+        onChange(initialDate as Date, finishDate as Date);
       }
       setOpenModal(false);
-    }, [finishDate, onChange, startDate]);
+    }, [finishDate, onChange, initialDate]);
 
     const handlePrevMounth = useCallback(() => {
       refCalendar.current?.handleOnPressPrevious();
