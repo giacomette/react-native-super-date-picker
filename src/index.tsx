@@ -26,6 +26,7 @@ moment.locale('pt-br');
 export interface DatePickerProps {
   startDate?: Date;
   endDate?: Date;
+  minDate?: Date;
   ref?: any;
   onChange?: (startDate: Date, endDate: Date) => void;
 }
@@ -36,7 +37,7 @@ export interface DatePickerRef {
 }
 
 const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
-  ({ startDate, endDate, onChange }, ref) => {
+  ({ startDate, endDate, minDate, onChange }, ref) => {
     const [initialDate, setInitialDate] = useState<Date>(new Date());
     const [finishDate, setFinishDate] = useState<Date>(new Date());
 
@@ -115,6 +116,7 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
             <CalendarPicker
               width={width - 48}
               ref={refCalendar}
+              minDate={minDate}
               selectedStartDate={startDate}
               selectedEndDate={endDate}
               selectedDayColor={'#def0e8'}
