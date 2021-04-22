@@ -1,6 +1,6 @@
 {
   "name": "react-native-super-date-picker",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Super Date Picker",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
