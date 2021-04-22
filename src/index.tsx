@@ -172,7 +172,8 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
                     onPress={() => handleNextMounth()}
                   >
                     <Icon
-                      name="ant-caretright"
+                      fontFamily="AntDesign"
+                      name="caretright"
                       fontSize={16}
                       color={'#2C2C2C'}
                     />
