@@ -19,6 +19,10 @@ import { Div, Icon, Text } from 'react-native-magnus';
 
 const { width } = Dimensions.get('screen');
 
+import 'moment/locale/pt-br';
+
+moment.locale('pt-br');
+
 export interface DatePickerProps {
   startDate?: Date;
   endDate?: Date;
