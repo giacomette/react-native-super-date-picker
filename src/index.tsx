@@ -122,7 +122,6 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
                 handleDate(v?.toDate(), type)
               }
               allowRangeSelection
-              allowBackwardRangeSelect
               selectedRangeStartTextStyle={{
                 color: 'white',
               }}
