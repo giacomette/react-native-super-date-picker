@@ -27,6 +27,7 @@ export interface DatePickerProps {
   startDate?: Date;
   endDate?: Date;
   minDate?: Date;
+  maxDate?: Date;
   ref?: any;
   onChange?: (startDate: Date, endDate: Date) => void;
 }
@@ -37,7 +38,7 @@ export interface DatePickerRef {
 }
 
 const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
-  ({ startDate, endDate, minDate, onChange }, ref) => {
+  ({ startDate, endDate, minDate, maxDate, onChange }, ref) => {
     const [initialDate, setInitialDate] = useState<Date>(new Date());
     const [finishDate, setFinishDate] = useState<Date>(new Date());
 
@@ -117,6 +118,7 @@ const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
               width={width - 48}
               ref={refCalendar}
               minDate={minDate}
+              maxDate={maxDate}
               selectedStartDate={startDate}
               selectedEndDate={endDate}
               selectedDayColor={'#def0e8'}
